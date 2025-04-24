@@ -1,0 +1,7 @@
+flask
+pywebview
+CORS
+flask_cors
+psutil
+routes
+pyinstaller
