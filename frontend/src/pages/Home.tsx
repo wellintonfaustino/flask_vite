@@ -16,6 +16,13 @@ const Home = () => {
       >
         Ver informações do sistema
       </button>
+
+      <button
+        onClick={() => navigate('/login')}
+        className='bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 ml-4'
+      >
+        Ir para Login
+      </button>
     </div>
   );
 };
