@@ -39,7 +39,7 @@ export default function LoginForm() {
         className='absolute w-full h-full '
       ></div>
       <div className=' z-10 login-container w-full max-w-md rounded-2xl overflow-hidden border border-pink-100 bg-gradient-to-br from-[#fff5f7] to-[#ffeef2] shadow-[0_10px_30px_rgba(255,138,171,0.2)]'>
-        <div className='bg-gradient-to-r from-pink-400 to-pink-600 py-6 px-8 text-center'>
+        <div className='bg-gradient-to-r from-pink-400 to-pink-700 py-6 px-8 text-center'>
           <h1 className='text-3xl font-bold text-white'>Logo Pampili</h1>
           <p className='text-pink-100 mt-2'>
             Entre na sua conta para continuar
