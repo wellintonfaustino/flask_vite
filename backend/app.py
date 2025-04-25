@@ -1,6 +1,10 @@
+import sys, os
+sys.path.append(os.path.abspath(os.path.dirname(__file__)))
+from src.routes import register_routes
+
 from flask import Flask, send_from_directory, request, jsonify
 from flask_cors import CORS
-from routes import register_routes
+from src.routes import register_routes
 
 # Criação correta do app com pasta estática e templates
 app = Flask(__name__, static_folder="static", template_folder="templates")
@@ -8,10 +12,10 @@ app = Flask(__name__, static_folder="static", template_folder="templates")
 # Ativa o CORS antes de registrar rotas
 CORS(app)
 
-# Registra rotas do sistema (ex: /api/sistema)
+# Registra rotas do sistema
 register_routes(app)
 
-# Rota extra de exemplo
+# Rota extra
 @app.route("/api/quadrado", methods=["POST"])
 def calcular_quadrado():
     data = request.get_json()
@@ -19,12 +23,11 @@ def calcular_quadrado():
     resultado = numero ** 2
     return jsonify({"resultado": resultado})
 
-# Rota padrão: serve index.html
+# Rota padrão
 @app.route("/")
 def index():
     return send_from_directory("static", "index.html")
 
-# Serve arquivos da pasta static (ex: JS, CSS, etc)
 @app.route("/<path:path>")
 def static_files(path):
     return send_from_directory("static", path)
